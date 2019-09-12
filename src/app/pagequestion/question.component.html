@@ -1,0 +1,23 @@
+<StackLayout height="10000" >
+        <GridLayout columns="*,*,50,50,50" height="150" >
+            <Label col="0" text="Score" fontSize="20" color="red"></Label>
+            <Label col="1" [text]="score" fontSize="20" color="red"></Label>
+            <Image *ngIf="vie > 0" verticalAlignment="top" col="2" height="40" width="50" src="res://coeur" ></Image>
+            <Image *ngIf="vie > 1"  verticalAlignment="top" col="3" height="40" width="50" src="res://coeur" ></Image>
+            <Image *ngIf="vie > 2"  verticalAlignment="top" col="4" height="40" width="50" src="res://coeur" ></Image>
+        </GridLayout>
+       
+        <GridLayout columns="*" height="80">
+            <Label col="0" [text]="question.texte" fontSize="20"></Label> 
+
+        </GridLayout>
+     
+        <GridLayout columns="150,*,150"    >
+                <Button (tap)="reponse(true)"  verticalAlignment="bottom"  col="0" height="80"   text="Vrai" fontSize="20" color="white" backgroundColor="blue"> </Button>
+                <GridLayout columns="50,50"    verticalAlignment="bottom" col="1">
+                    <Image *ngIf="jock > 0"  (tap)="jocker()" height="40"  col="0"  width="50"  src="res://clown"  ></Image>
+                    <Image *ngIf="jock > 1"  (tap)="jocker()" height="40"   col="1" width="50"  src="res://clown"  ></Image>
+                </GridLayout>                
+                <Button (tap)="reponse(false)"  verticalAlignment="bottom" col="2"  height="80"   text="Faux" fontSize="20" color="white" backgroundColor="red"> </Button>
+            </GridLayout>
+    </StackLayout>

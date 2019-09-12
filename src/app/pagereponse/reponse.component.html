@@ -1,0 +1,26 @@
+<StackLayout height="10000" >
+        <GridLayout columns="*,*,50,50,50" height="150" >
+            <Label col="0" text="Score" fontSize="20" color="red"></Label>
+            <Label col="1" [text]="score" fontSize="20" color="red"></Label>
+
+            <Image *ngIf="vie > 0" verticalAlignment="top" col="2" height="40" width="50" src="res://coeur" ></Image>
+            <Image *ngIf="vie > 1"  verticalAlignment="top" col="3" height="40" width="50" src="res://coeur" ></Image>
+            <Image *ngIf="vie > 2"  verticalAlignment="top" col="4" height="40" width="50" src="res://coeur" ></Image>
+            
+        </GridLayout>
+       
+        <GridLayout columns="*,300,*" height="80">
+            <Label *ngIf="res == 'good'" col="1" text="bonne reponse !!!" color="green" fontSize="30"></Label>
+            <Label *ngIf="res == 'bad'" col="1" text="Mauvaise reponse !!!" color="red" fontSize="30"></Label>
+        </GridLayout>
+        <GridLayout columns="10,*,10" height="100">
+                <Image src="res://over" *ngIf="vie == 0" height="300" width="200" col="1" text="Mauvaise reponse !!!" color="red" fontSize="30"></Image>
+            </GridLayout>
+        <GridLayout columns="10,*,10" height="80">
+                <Label *ngIf="res == 'bad'" col="1" [text]="question.reponseText" color="blue"  fontSize="20"></Label>
+        </GridLayout>
+        <GridLayout columns="*,200,*"    >
+            <Button *ngIf="vie > 0" verticalAlignment="bottom"  col="1" (tap)="test()" height="70" [nsRouterLink]="['/question']"  text="Suivant" fontSize="30" color="white" backgroundColor="blue"> </Button>
+            <Button *ngIf="vie == 0" verticalAlignment="bottom"  col="1" height="70" [nsRouterLink]="['/home']"  text="Terminer" fontSize="30" color="white" backgroundColor="green"> </Button>
+        </GridLayout>
+    </StackLayout>

@@ -1,0 +1,17 @@
+<StackLayout height="10000" >
+    <GridLayout columns="1,*,1" height="250" width="400">
+            <Image col="1" src="res://vraifaux" ></Image>
+    </GridLayout>
+    <GridLayout columns="50,*,50" height="80">
+        <Button col="1" text="Jouer" (tap) = "jouer()" [nsRouterLink]="['/question']" fontSize="20" color="white" backgroundColor="blue"> </Button>
+    </GridLayout>
+    <GridLayout columns="50,*,50" height="80">
+        <Button col="1" text="Classement" fontSize="20" color="white" backgroundColor="blue"> </Button>
+    </GridLayout>
+    <GridLayout columns="50,*,50" height="80">
+        <Button col="1" text="Poser une question" fontSize="20" color="white" backgroundColor="blue"> </Button>
+    </GridLayout>
+    <GridLayout columns="5,*,5" >
+        <Button verticalAlignment="bottom" height="80" margin="3" col="1" text="Option" fontSize="20" color="white" backgroundColor="red" [nsRouterLink]="['/option']"> </Button>
+    </GridLayout>
+</StackLayout>
